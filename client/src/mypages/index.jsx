@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class MyButton extends React.Component {
     
     render() {
+      console.log('ccc', this.props)
         return (
             <button onClick={this.props.onClick}>clickme</button>
         //   <div>
@@ -14,10 +15,9 @@ class MyButton extends React.Component {
       }
       
 }
+MyButton.propTypes = {
+  onClick: PropTypes.func.isRequired
+}
 
-const mapStateToProps = state => ({
-    ...state, 
-    onClick: PropTypes.func
-  });
   
 export default MyButton;

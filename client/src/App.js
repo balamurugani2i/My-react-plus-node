@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { startAction } from "./actions/startAction";
+import { createUser } from "./actions/userAction";
+import PropTypes from 'prop-types';
 
 
 import './App.css';
@@ -16,21 +17,25 @@ class App extends React.Component {
     return (
     
       <div className="App">
-      <p>gfhhdf {this.state.text }</p>
-        <MyButton onClick={() => this.setState({
-          text:'gdfhjgh'
-        })}/>
+      <p>gfhhdf {this.state.text } {this.props.user}</p>
+        <MyButton onClick={() => this.props.createUser()}
+           />
       </div>
     );
   }
 }
 
+App.propTypes = {
+  createUser: PropTypes.func.isRequired
+}
+
 const mapStateToProps = state => ({
-  ...state, 
+  ...state,
+  user: state.user.get('user'),
 });
 
 const mapDispatchToProps = dispatch => ({
-  startAction: () => dispatch(startAction),
+  createUser: () => dispatch(createUser()),
   // stopAction: () => dispatch(stopAction)
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);

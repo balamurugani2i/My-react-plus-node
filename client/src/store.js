@@ -1,8 +1,6 @@
 import { createStore } from "redux";
-import rotateReducer from "./reducers/rotateReducer";
+import rotateReducer from "./reducers/index";
 
-function store(state = { rotating: true }) {
-  return createStore(rotateReducer,state);
-}
+const store = createStore(rotateReducer);
 
 export default store;
