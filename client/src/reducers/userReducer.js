@@ -5,11 +5,10 @@ const initialState = fromJS({
 
 const userReducer = (state = initialState, action) => {
 
-  console.log('check action ---->', action.payload);
   switch (action.type) {
-    case 'user':
+    case 'users':
       return state
-        .set('user', action.payload);
+        .set('user', action.response);
     default:
       return state;
   }

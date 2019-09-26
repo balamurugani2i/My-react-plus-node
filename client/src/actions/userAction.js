@@ -1,9 +1,19 @@
-  const createUser = () => ({
-    type: 'user',
-    payload: 'hi all'
+
+  const getUser = () => ({
+    type: 'getUserInit',
+  });
+
+  const getUserSuccess = () => ({
+    type: 'users',
+  });
+
+  const getUserError = () => ({
+    type: 'getUsererror',
   });
 
 
   module.exports = {
-    createUser
+    getUser,
+    getUserSuccess,
+    getUserError
   }
