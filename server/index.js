@@ -15,8 +15,8 @@ app.get('/api/', function (req, res) {
 });
  
 // set port
-app.listen(5000, '192.168.1.162', function () {
-    console.log('Node app is running on port 5000');
+app.listen(3000, 'localhost', function () {
+    console.log('Node app is running on port 3000');
 });
 
 var contact = require('./contacts.js');

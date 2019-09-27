@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { createUser } from "./actions/userAction";
+import { getUser } from "./actions/userAction";
 import PropTypes from 'prop-types';
 
 
@@ -17,8 +17,9 @@ class App extends React.Component {
     return (
     
       <div className="App">
-      <p>gfhhdf {this.state.text } {this.props.user}</p>
-        <MyButton onClick={() => this.props.createUser()}
+      <span style={{background:"red"}}>gfhhdf </span>
+      <p>{this.state.text }</p>
+        <MyButton onClick={() => this.props.getUser()}
            />
       </div>
     );
@@ -26,7 +27,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  createUser: PropTypes.func.isRequired
+  getUser: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -35,7 +36,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createUser: () => dispatch(createUser()),
+  getUser: () => dispatch(getUser()),
   // stopAction: () => dispatch(stopAction)
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
