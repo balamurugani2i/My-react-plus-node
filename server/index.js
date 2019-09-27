@@ -1,17 +1,18 @@
 var express = require('express');
+var cors = require('cors')
 var app = express();
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
   
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(cors());
   
   
 // default route
 app.get('/api/', function (req, res) {
-    return res.send({ error: true, message: 'hello' })
+    return res.send({ error: false, message: 'hello' })
 });
  
 // set port
