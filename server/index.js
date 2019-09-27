@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
   
 // default route
 app.get('/api/', function (req, res) {
-    return res.send({ error: true, message: 'hello' })
+    return res.send({ error: false, message: 'hello' })
 });
  
 // set port

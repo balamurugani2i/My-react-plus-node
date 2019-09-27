@@ -25,7 +25,8 @@ dbConn.connect();
 router.get('/all', function (req, res) {
     dbConn.query('SELECT * FROM CONTACTS', function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'CONTACTS list.' });
+        console.log('dfhgdsjhf');
+        return res.send({ data: results, message: 'CONTACTS list.' });
     });
 });
  

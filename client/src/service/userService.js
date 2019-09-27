@@ -7,7 +7,7 @@ import axios from 'axios/index';
 // });
 export const getUsersService = () => axios({
   method: 'get',
-  url: '/api/',
+  url: '/api/contact/all',
   data: {}
 });
 
