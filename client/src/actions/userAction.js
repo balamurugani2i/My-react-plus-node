@@ -3,12 +3,14 @@
     type: 'getUserInit',
   });
 
-  const getUserSuccess = () => ({
+  const getUserSuccess = (data) => ({
     type: 'users',
+    payload: data
   });
 
-  const getUserError = () => ({
+  const getUserError = (error) => ({
     type: 'getUsererror',
+    error:error
   });
 
 
