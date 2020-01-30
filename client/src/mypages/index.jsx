@@ -11,6 +11,8 @@ class MyButton extends React.Component {
     super(props);
     this.state = {
       columnDefs: [{
+        headerName: "Id", field: "ID"
+      },{
         headerName: "Name", field: "NAME"
       }, {
         headerName: "Number", field: "NUMBER"
@@ -20,10 +22,10 @@ class MyButton extends React.Component {
 
   componentDidMount() {
     console.log('didmount');
-    console.log('------->>', this.props.user);
+    console.log('------>>>', this.props.user);
 
     this.props.getUser();
-    console.log('------->>', this.props.user);
+    console.log('------>>>', this.props.user);
   }
 
   render() {
@@ -31,7 +33,7 @@ class MyButton extends React.Component {
     return (
       <React.Fragment>
         <button onClick={this.props.onClick}>clickme</button>
-        <div style={{ height: '150px', width: '600px' }} className="ag-theme-balham">
+        <div style={{ height: '150px', width: '600px', margin:'5px' }} className="table1 ag-theme-balham">
     <AgGridReact
         columnDefs={this.state.columnDefs}
         rowData={this.props.user.data}>

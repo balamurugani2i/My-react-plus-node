@@ -11,7 +11,7 @@ setupInterceptors(store);
 
 ReactDOM.render(
     <Provider store={store}>
-      <App  rotating={"dfgd"}/>
+      <App/>
     </Provider>, document.getElementById('root'),
 );
 

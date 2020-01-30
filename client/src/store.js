@@ -5,7 +5,7 @@ import saga from './saga/index'
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
-const store = createStore(rotateReducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
+const store = createStore(rotateReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(saga);
 
 export default store;
